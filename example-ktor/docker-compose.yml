@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  ktor:
+    image: java:8-jre-alpine
+    container_name: ktor-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./build/libs/example-ktor-0.0.1-all.jar:/home/example-ktor/example-ktor-0.0.1-all.jar
+    command: java -jar /home/example-ktor/example-ktor-0.0.1-all.jar
+    restart: always
